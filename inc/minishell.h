@@ -6,7 +6,7 @@
 /*   By: javjimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 20:57:28 by javjimen          #+#    #+#             */
-/*   Updated: 2025/07/20 17:29:33 by javjimen         ###   ########.fr       */
+/*   Updated: 2025/07/23 11:58:40 by javjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@
 
 /* minishell.c */
 int	main(int argc, char** argv);
+
+/* ft_pipe.c */
+int ft_pipe(int argc, char *argv[]);
 
 #endif /* MINISHELL_H */
