@@ -6,17 +6,19 @@
 /*   By: javjimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 20:57:37 by javjimen          #+#    #+#             */
-/*   Updated: 2025/07/24 10:23:07 by javjimen         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:23:30 by javjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
 	//size_t		i;
-	char*		newline;
-	const char*	prompt = "this is a prompt!: ";
+	char		*newline;
+	char		**commands;
+	int			comcount;
+	const char	*prompt = "Enter the commands to give to the minishell: ";
 
 	(void)argc;
 	(void)argv;
@@ -31,10 +33,24 @@ int	main(int argc, char** argv)
 	write(1, "\n", 1);*/
 	if (newline != NULL)
 	{
-		argv[1] = ft_strjoin(argv[1], newline);
-		ft_pipe(argc, argv);
+		commands = ft_split(newline, ' ');
+		if (commands == NULL)
+		{
+			perror("ft_split");
+			free(newline);
+			return (1);
+		}
 		free(newline);
-		free(argv[1]);
+		comcount = 0;
+		while (commands[comcount] != NULL)
+			comcount++;
+		ft_pipe(comcount, commands);
+		while (comcount >= 0)
+		{
+			free(commands[comcount]);
+			comcount--;
+		}
+		free(commands);
 	}
 	return (0);
 }
