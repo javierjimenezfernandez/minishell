@@ -6,7 +6,7 @@
 #    By: javjimen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 20:31:03 by javjimen          #+#    #+#              #
-#    Updated: 2025/07/23 12:02:08 by javjimen         ###   ########.fr        #
+#    Updated: 2025/08/07 19:15:41 by javjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 # List of source files
 SRC_DIR		= src/
 SRC			= $(addprefix $(SRC_DIR), minishell.c \
-									  ft_pipe.c)
+									  ft_pipe.c \
+									  utils.c)
 
 
 # List of object files

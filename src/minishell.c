@@ -6,7 +6,7 @@
 /*   By: javjimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 20:57:37 by javjimen          #+#    #+#             */
-/*   Updated: 2025/07/25 12:23:30 by javjimen         ###   ########.fr       */
+/*   Updated: 2025/08/07 19:40:07 by javjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,7 @@ int	main(int argc, char **argv)
 		while (commands[comcount] != NULL)
 			comcount++;
 		ft_pipe(comcount, commands);
-		while (comcount >= 0)
-		{
-			free(commands[comcount]);
-			comcount--;
-		}
-		free(commands);
+		free_string_array(commands);
 	}
 	return (0);
 }
