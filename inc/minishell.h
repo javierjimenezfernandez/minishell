@@ -13,18 +13,21 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-
-#include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <unistd.h>
-#include <stdlib.h>
-
+/* c libraries */
+# include <stdio.h>
+# include <readline/readline.h>
+# include <readline/history.h>
+# include <unistd.h>
+# include <stdlib.h>
+/* libft headers */
 # include "libft.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
+/* minishell headers */
+# include "utils.h"
+# include "tokenizer.h"
 
 /* minishell.c */
-int	main(int argc, char** argv);
+int	main(int argc, char **argv);
 
 #endif /* MINISHELL_H */
